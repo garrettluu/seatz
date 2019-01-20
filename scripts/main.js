@@ -7,22 +7,38 @@
 // 25-26 are the paired seats.
 // Seats 8, 11, 14 are single seats.
 
-function Seat(uiElement, index, occupied) {
+function Seat(uiElement, index, occupied, priority) {
   this.ui = uiElement;
   this.index = index;
   this.occupied = occupied;
+  this.priority = priority;
 }
 
 var totalSeats = 4;
 var seats = [];
 if(document.title === "index.html") {
   for (var i = 0; i < totalSeats; i++) {
-    seats.push(new Seat(document.getElementById("seat" + i.toString()), i, false));
+    seats.push(new Seat(document.getElementById("seat" + i.toString()), i, false, i == 0));
   }
 } else if(document.title === "mobile.html") {
   for (var i = 0; i < totalSeats; i++) {
     seats.push(new Seat(document.getElementById("seat" + i.toString() + "Mobile"), i, false));
   }
+}
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+ coll[i].addEventListener("click", function() {
+   this.classList.toggle("active");
+   var content = this.nextElementSibling;
+   if (content.style.display === "block") {
+     content.style.display = "none";
+   } else {
+     content.style.display = "block";
+   }
+ });
 }
 
 function getSeatStatus(seatNumber) {
@@ -41,6 +57,8 @@ function updateSeatStatus() {
       }
   }
   document.getElementById("availableSeats").innerText = "Available Seats: " + availableSeats();
+  document.getElementById("normalSeats").innerText = "Normal Seats: " + (availableSeats() - prioritySeats());
+  document.getElementById("prioritySeats").innerText = "Priority Seats: " + prioritySeats();
 }
 
 function makeHidden(uiElement) {
@@ -59,6 +77,16 @@ function availableSeats() {
         }
     }
     return numAvailable;
+}
+
+function prioritySeats() {
+    var priorityAvailable = 0;
+    for (var i = 0; i < seats.length; i++) {
+        if (!seats[i].occupied && seats[i].priority) {
+            priorityAvailable++;
+        }
+    }
+    return priorityAvailable;
 }
 
 updateSeatStatus();
