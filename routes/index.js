@@ -2,6 +2,9 @@ module.exports = function (io) {
     var express = require('express');
     var router = express.Router();
 
+    // var DataStore = require('nedb');
+    // var db = new DataStore();
+
     /* GET home page. */
     router.get('/', function (req, res, next) {
         res.render('home', {title: 'Bus Count'});
@@ -16,6 +19,20 @@ module.exports = function (io) {
     router.get('/mobile', function(req, res) {
         res.render('mobile', {title: 'Live Tracker '});
     });
+
+    // router.post('/tracker', function (req, res) {
+        // seatNumber = req.body.seatNumber;
+        // seatOccupied = req.body.seatOccupied;
+        // var seat = {num: 0, occupied: true};
+        // var seat = {num: req.body.seatNumber, occupied: req.body.seatOccupied};
+        // db.remove({});
+        // db.insert(seat);
+    // });
+
+    // router.get('/data', function(req, res) {
+    //     res.send(db.find({}, function(err, docs){}));
+    //     res.send('test');
+    // });
 
     io.on('connection', function (socket) {
         console.log("Socket connected");
@@ -33,4 +50,4 @@ module.exports = function (io) {
     });
 
     return router;
-}
+};

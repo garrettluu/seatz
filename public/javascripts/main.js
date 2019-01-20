@@ -44,22 +44,22 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     var socket = io();
 
-    console.log("Emitting update!");
-    socket.emit('update', {seatOccupied: true, seatNumber: 1});
-
-    setTimeout(function () {
-        socket.emit('update', {seatOccupied: true, seatNumber: 2});
-    }, 5000);
-    setTimeout(function () {
-        socket.emit('update', {seatOccupied: true, seatNumber: 0});
-    }, 10000);
+    // console.log("Emitting update!");
+    // socket.emit('update', {seatOccupied: true, seatNumber: 1});
+    //
+    // setTimeout(function () {
+    //     socket.emit('update', {seatOccupied: true, seatNumber: 2});
+    // }, 5000);
+    // setTimeout(function () {
+    //     socket.emit('update', {seatOccupied: true, seatNumber: 0});
+    // }, 10000);
 
     socket.on('update seat', function (msg) {
         // update the seat occupancy here
-        console.log(msg.seatOccupied);
-        seats[msg.seatNumber].occupied = msg.seatOccupied;
+        seats[msg.id].occupied = msg.occupied;
         updateSeatStatus();
     });
+
 
     function getSeatStatus(seatNumber) {
         // TODO: get seat status from arduino
@@ -107,5 +107,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return totalPrioritySeats - priorityOccupied;
     }
+    // $(function() {
+        // console.log("test");
+        // $.post('/tracker', {seatNumber: '0', seatOccupied: 'true'});
+        // $.get('/data', function(response) {seats[response.num] = response.occupied});
+        // updateSeatStatus();
+    // });
     updateSeatStatus();
 });
