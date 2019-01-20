@@ -13,15 +13,16 @@ function Seat(uiElement, index, occupied) {
   this.occupied = occupied;
 }
 
-var totalSeats = 2;
-var seats = []
+var totalSeats = 4;
+var seats = [];
 for (var i = 0; i < totalSeats; i++) {
     seats.push(new Seat(document.getElementById("seat" + i.toString()), i, false));
 }
 
 function getSeatStatus(seatNumber) {
   // TODO: get seat status from arduino
-  return false;
+    return true;
+
 }
 
 function updateSeatStatus() {
@@ -33,6 +34,7 @@ function updateSeatStatus() {
           makeHidden(seats[i].ui);
       }
   }
+  document.getElementById("availableSeats").innerText = "Available Seats: " + availableSeats();
 }
 
 function makeHidden(uiElement) {
@@ -43,5 +45,15 @@ function makeVisible(uiElement) {
     uiElement.classList.remove("hidden");
 }
 
+function availableSeats() {
+    var numAvailable = 0;
+    for (var i = 0; i < seats.length; i++) {
+        if (!seats[i].occupied) {
+            numAvailable++;
+        }
+    }
+    return numAvailable;
+}
+
 updateSeatStatus();
-setTimeout(function(){seats[0].occupied = true}, 5000);
+// setTimeout(function(){seats[0].occupied = true}, 5000);

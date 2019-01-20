@@ -63,14 +63,30 @@ h2 {
   position: relative;
 }
 
-.img2 {
-  display: block;
+#seat0 {
   position: absolute;
   top: 177px;
   left: 628px;
   max-height: 10%;
 }
-
+#seat1 {
+  position: absolute;
+  top: 177px;
+  left: 588px;
+  max-height: 10%;
+}
+#seat2 {
+  position: absolute;
+  top: 177px;
+  left: 548px;
+  max-height: 10%;
+}
+#seat3 {
+  position: absolute;
+  top: 177px;
+  left: 508px;
+  max-height: 10%;
+}
 .hidden {
   visibility: hidden;
 }
