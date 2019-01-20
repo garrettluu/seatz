@@ -6,15 +6,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="images/favicon.ico">
 <link rel="stylesheet" href="styles/main.css">
+<img src='images/buss.jpg' style="width:100%">
 </head>
   <body>
 
     <div class="contentMobile">
 
       <h2>Live Tracker</h2>
-      <h3>Bus 18A</h3>
-      <h3>Line 30</h3>
-      <h3>At stop: 5</h3>
+      <h3><p id="busNumber">Bus Number:</p></h3>
+      <h3><p id="lineNumber">Line Number:</p></h3>
+      <h3><p id="busDirection">To:</p></h3>
+      <h3><p id="busStop">Stop:</p></h3>
+
       <button class="collapsible" id="availableSeats">Available Seats:</button>
       <div class="collapseContent">
         <p id="normalSeats">Normal Seats:</p>
@@ -33,6 +36,7 @@
 
     <div class="footer">
       <a href="index.html">Switch to desktop version</a>
+      <a href="home.html">Go Home</a>
     </div>
 
   </body>

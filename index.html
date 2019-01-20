@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Seatz - Online Seating Tracking</title>
+<title>Seatz - Online Seat Tracking</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="images/favicon.ico">
 <link rel="stylesheet" href="styles/main.css">
+<img src='images/buss.jpg' style="width:100%">
 </head>
   <body>
 
@@ -21,9 +22,11 @@
         <img id="seat3" src="images/red_x.png" alt="Occupied">
       </div>
 
-      <h3>Bus 18A</h3>
-      <h3>Line 30</h3>
-      <h3>At stop: 5</h3>
+      <h3><p id="busNumber">Bus Number:</p></h3>
+      <h3><p id="lineNumber">Line Number:</p></h3>
+      <h3><p id="busDirection">To:</p></h3>
+      <h3><p id="busStop">Stop:</p></h3>
+
       <button class="collapsible" id="availableSeats">Available Seats:</button>
       <div class="collapseContent">
         <p id="normalSeats">Normal Seats:</p>
@@ -34,6 +37,7 @@
 
     <div class="footer">
       <a href="mobile.html">Switch to mobile version</a>
+      <a href="home.html">Go Home</a>
     </div>
 
   </body>
