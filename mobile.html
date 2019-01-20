@@ -9,12 +9,21 @@
 </head>
   <body>
 
+    <!-- Navbar -->
+    <div class="topnav">
+      <a href="home.html">Home</a>
+    </div>
+
+    <img src='images/buss.jpg' style="width:100%">
+
     <div class="contentMobile">
 
       <h2>Live Tracker</h2>
-      <h3>Bus 18A</h3>
-      <h3>Line 30</h3>
-      <h3>At stop: 5</h3>
+      <h3><p id="busNumber">Bus Number:</p></h3>
+      <h3><p id="lineNumber">Line Number:</p></h3>
+      <h3><p id="busDirection">To:</p></h3>
+      <h3><p id="busStop">Stop:</p></h3>
+
       <button class="collapsible" id="availableSeats">Available Seats:</button>
       <div class="collapseContent">
         <p id="normalSeats">Normal Seats:</p>

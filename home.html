@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>Seatz - Online Seat Tracking</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="shortcut icon" href="images/favicon.ico">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
-  height: 100%;
   color: #777;
   line-height: 1.8;
 }
@@ -23,6 +23,13 @@ body, html {
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
 
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
 </style>
 <body>
 
@@ -38,23 +45,23 @@ body, html {
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">LIVE TRACKER</a>
+    <a href="index.html" class="w3-bar-item w3-button" onclick="toggleFunction()">LIVE TRACKER</a>
   </div>
 </div>
 
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min">
   <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity"><span class="w3-hide-small">SEATZ</span></span>
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">SEATZ<span class="w3-hide-small"></span></span>
   </div>
-  <div class="w3-display-middle" style="white-space:nowrap; transform:translate(-225px,50px)">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity"><span class="w3-hide-small">online seat tracking</span></span>
+  <div class="w3-display-middle" style="white-space:nowrap; margin-top: 50px">
+    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity w3-hide-small">online seat tracking</span>
   </div>
 </div>
 
 <!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64" id="about">
-  <h3 class="w3-center">ABOUT US</h3>
+<div class="w3-content w3-container w3-padding-64">
+  <h3 class="w3-center"><img src="images/seat_logo.png" alt="Seatz Logo" style="max-width: 10%">ABOUT US<img src="images/seat_logo.png" alt="Seatz Logo" style="max-width: 10%; transform:scaleX(-1)"></h3>
   <p class="w3-center"><em>We are the Golden Oolong Team!</em></p>
   <p>Seatz is an online seat tracking service for public transit. Currently, Seatz supports buses,
      specifically the models used by San Diego Metropolitan Transit System. We have developed a seat sensor
@@ -69,7 +76,11 @@ body, html {
                             so dry I think I'm hallucinating in binary ive never even worked this much on pa
                             when do i get a break we're all trapped here with our orange paper handcuffs god save the
                             queen and me pls the structural eng lab is just flashing "anger" at me menacingly
-                            every time i go to the restroom but tbh big mood ngl</p>
+                            every time i go to the restroom but tbh big mood ngl and oh dear lord its already four am
+                            i havent stayed up this late since i had to finish a presentation for wcwp and before that
+                            it was a project for apush i had no intention of repeatin that but i guess its just happenin
+                            it really do be that way sometimes it do it do and i cant even sleep anymore bc my blood
+                            is just literally caffeine now and i have so many regrets</p>
 </div>
 
 <!-- Footer -->
