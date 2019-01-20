@@ -1,11 +1,18 @@
-* {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+:root {
+  --sky-blue-color: #7ad7f0;
+  --ghost-white-color: #f5fcff;
 }
 
-body {
+* {
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+html, body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -22,7 +29,7 @@ h2 {
 .topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: var(--ghost-white-color);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -30,15 +37,20 @@ h2 {
 
 /* Change color on hover */
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  background-color: var(--sky-blue-color);
+  /*color: black;*/
 }
 
 /* Style the content */
 .content {
   background-color: #ddd;
   padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.contentMobile {
+  background-color: #ddd;
+  padding: 10px;
+  height: 1250px;
 }
 
 /* Style the footer */
@@ -47,7 +59,57 @@ h2 {
   padding: 10px;
 }
 
-img {
-  max-width: 100%;
-  max-height: 100%;
+.busMap {
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.img1 {
+  position: relative;
+}
+
+.img1Mobile {
+  position: relative;
+  top: 420px;
+  left: -330px;
+  transform: rotate(90deg);
+}
+
+#seat0 {
+  position: absolute;
+  top: 177px;
+  left: 628px;
+  max-height: 10%;
+}
+
+.img2Mobile {
+  display: block;
+  position: absolute;
+  top: 644px;
+  left: 110px;
+  max-height: 10%;
+}
+
+#seat1 {
+  position: absolute;
+  top: 177px;
+  left: 588px;
+  max-height: 10%;
+}
+#seat2 {
+  position: absolute;
+  top: 177px;
+  left: 548px;
+  max-height: 10%;
+}
+#seat3 {
+  position: absolute;
+  top: 177px;
+  left: 508px;
+  max-height: 10%;
+}
+.hidden {
+  visibility: hidden;
 }
