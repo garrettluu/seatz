@@ -13,10 +13,22 @@ function Seat(uiElement, index, occupied, priority) {
   this.occupied = occupied;
   this.priority = priority;
 }
+// bus details
+var busNumber = "18A"
+var lineNumber = "30"
+var busModel = "A"
+var busDirection = "UTC"
+var busStop = "5"
+document.getElementById("busNumber").innerText = "Bus " + busNumber.toString();
+document.getElementById("lineNumber").innerText = "Line " + lineNumber.toString();
+document.getElementById("busDirection").innerText = "To: " + busDirection.toString();
+document.getElementById("busStop").innerText = "At Stop: " + busStop.toString();
 
+// Seats
 var totalSeats = 37;
 var totalPrioritySeats = 6;
 var seats = [];
+//Display Seat Number
 if(document.title === "index.html") {
   for (var i = 0; i < totalSeats; i++) {
     seats.push(new Seat(document.getElementById("seat" + i.toString()), i, false, i == 0));
