@@ -8,9 +8,11 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-body {
+html, body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -43,7 +45,12 @@ h2 {
 .content {
   background-color: #ddd;
   padding: 10px;
-  height: auto; /* Should be removed. Only for demonstration */
+}
+
+.contentMobile {
+  background-color: #ddd;
+  padding: 10px;
+  height: 1250px;
 }
 
 /* Style the footer */
@@ -63,12 +70,28 @@ h2 {
   position: relative;
 }
 
+.img1Mobile {
+  position: relative;
+  top: 420px;
+  left: -330px;
+  transform: rotate(90deg);
+}
+
 #seat0 {
   position: absolute;
   top: 177px;
   left: 628px;
   max-height: 10%;
 }
+
+.img2Mobile {
+  display: block;
+  position: absolute;
+  top: 644px;
+  left: 110px;
+  max-height: 10%;
+}
+
 #seat1 {
   position: absolute;
   top: 177px;
