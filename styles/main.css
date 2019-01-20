@@ -56,11 +56,18 @@ h2 {
   position: relative;
   top: 0;
   left: 0;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .img1 {
   position: relative;
+}
+
+.img1Mobile {
+  position: relative;
+  top: 420px;
+  transform: rotate(90deg);
 }
 
 .img2 {
