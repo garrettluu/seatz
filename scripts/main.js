@@ -7,10 +7,16 @@
 // 25-26 are the paired seats.
 // Seats 8, 11, 14 are single seats.
 
-var totalSeats = 37;
+function Seat(uiElement, index, occupied) {
+  this.ui = uiElement;
+  this.index = index;
+  this.occupied = occupied;
+}
+
+var totalSeats = 2;
 var seats = []
 for (var i = 0; i < totalSeats; i++) {
-  seats.push(false);
+    seats.push(new Seat(document.getElementById("seat" + i.toString()), i, false));
 }
 
 function getSeatStatus(seatNumber) {
@@ -20,6 +26,22 @@ function getSeatStatus(seatNumber) {
 
 function updateSeatStatus() {
   for (var i = 0; i < seats.length; i++) {
-    seats[i]
+      seats[i].occupied = getSeatStatus(i);
+      if (seats[i].occupied) {
+          makeVisible(seats[i].ui);
+      } else {
+          makeHidden(seats[i].ui);
+      }
   }
 }
+
+function makeHidden(uiElement) {
+    uiElement.classList.add("hidden");
+}
+
+function makeVisible(uiElement) {
+    uiElement.classList.remove("hidden");
+}
+
+updateSeatStatus();
+setTimeout(function(){seats[0].occupied = true}, 5000);
