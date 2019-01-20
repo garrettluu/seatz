@@ -67,6 +67,7 @@ h2 {
 .img1Mobile {
   position: relative;
   top: 420px;
+  left: -300px;
   transform: rotate(90deg);
 }
 
