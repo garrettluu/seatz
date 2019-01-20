@@ -89,7 +89,8 @@ function availableSeats() {
             numOccupied++;
         }
     }
-    return totalSeats - numOccupied;
+    // TODO: remove 4
+    return totalSeats - numOccupied - 4;
 }
 
 function prioritySeats() {
@@ -99,7 +100,8 @@ function prioritySeats() {
             priorityOccupied++;
         }
     }
-    return totalPrioritySeats - priorityOccupied;
+    // TODO: remove 1
+    return totalPrioritySeats - priorityOccupied - 1;
 }
 
 updateSeatStatus();
