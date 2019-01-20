@@ -15,8 +15,14 @@ function Seat(uiElement, index, occupied) {
 
 var totalSeats = 4;
 var seats = [];
-for (var i = 0; i < totalSeats; i++) {
+if(document.title === "index.html") {
+  for (var i = 0; i < totalSeats; i++) {
     seats.push(new Seat(document.getElementById("seat" + i.toString()), i, false));
+  }
+} else if(document.title === "mobile.html") {
+  for (var i = 0; i < totalSeats; i++) {
+    seats.push(new Seat(document.getElementById("seat" + i.toString() + "Mobile"), i, false));
+  }
 }
 
 function getSeatStatus(seatNumber) {
