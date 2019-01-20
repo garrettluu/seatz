@@ -9,24 +9,50 @@ document.addEventListener('DOMContentLoaded', function () {
 // 25-26 are the paired seats.
 // Seats 8, 11, 14 are single seats.
 
-    function Seat(uiElement, index, occupied) {
+    function Seat(uiElement, index, occupied, priority) {
         this.ui = uiElement;
         this.index = index;
         this.occupied = occupied;
+        this.priority = priority;
     }
 
     var totalSeats = 4;
+    var totalPrioritySeats = 1;
     var seats = [];
-    for (var i = 0; i < totalSeats; i++) {
-        seats.push(new Seat(document.getElementById("seat" + i.toString()), i, false));
+    if (document.title === 'Live Tracker') {
+        for (var i = 0; i < totalSeats; i++) {
+            seats.push(new Seat(document.getElementById("seat" + i.toString()), i, false, i === 0));
+        }
+    } else if (document.title === 'Live Tracker ') {
+        for (var i = 0; i < totalSeats; i++) {
+            seats.push(new Seat(document.getElementById("seat" + i.toString() + "Mobile"), i, false));
+        }
+    }
+
+    var coll = document.getElementsByClassName("collapsible");
+
+    for (var i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
     }
     var socket = io();
 
     console.log("Emitting update!");
     socket.emit('update', {seatOccupied: true, seatNumber: 1});
 
-    setTimeout(function(){socket.emit('update', {seatOccupied: true, seatNumber: 2});}, 5000);
-    setTimeout(function(){socket.emit('update', {seatOccupied: true, seatNumber: 0});}, 10000);
+    setTimeout(function () {
+        socket.emit('update', {seatOccupied: true, seatNumber: 2});
+    }, 5000);
+    setTimeout(function () {
+        socket.emit('update', {seatOccupied: true, seatNumber: 0});
+    }, 10000);
 
     socket.on('update seat', function (msg) {
         // update the seat occupancy here
@@ -42,14 +68,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function updateSeatStatus() {
-        for (var i = 0; i < seats.length; i++) {
-            if (seats[i].occupied) {
-                makeVisible(seats[i].ui);
+        for (var j = 0; j < seats.length; j++) {
+            if (seats[j].occupied) {
+                makeVisible(seats[j].ui);
             } else {
-                makeHidden(seats[i].ui);
+                makeHidden(seats[j].ui);
             }
         }
         document.getElementById("availableSeats").innerText = "Available Seats: " + availableSeats();
+        document.getElementById("normalSeats").innerText = "Normal Seats: " + (availableSeats() - prioritySeats());
+        document.getElementById("prioritySeats").innerText = "Priority Seats: " + prioritySeats();
     }
 
     function makeHidden(uiElement) {
@@ -61,12 +89,23 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function availableSeats() {
-        var numAvailable = 0;
+        var numOccupied = 0;
         for (var i = 0; i < seats.length; i++) {
-            if (!seats[i].occupied) {
-                numAvailable++;
+            if (seats[i].occupied) {
+                numOccupied++;
             }
         }
-        return numAvailable;
+        return totalSeats - numOccupied;
     }
+
+    function prioritySeats() {
+        var priorityOccupied = 0;
+        for (var i = 0; i < seats.length; i++) {
+            if (seats[i].occupied && seats[i].priority) {
+                priorityOccupied++;
+            }
+        }
+        return totalPrioritySeats - priorityOccupied;
+    }
+    updateSeatStatus();
 });

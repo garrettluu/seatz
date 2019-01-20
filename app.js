@@ -6,8 +6,8 @@ var logger = require('morgan');
 var socketio = require('socket.io');
 
 var app = express();
-var server = require('http').Server(app);
-var io = socketio(server);
+// var server = require('http').Server(app);
+var io = socketio();
 app.io = io;
 
 // make sure io is a parameter
@@ -43,6 +43,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-server.listen(3000);
+// server.listen(3000);
 
 module.exports = app;

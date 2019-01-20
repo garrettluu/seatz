@@ -1,8 +1,3 @@
-:root {
-  --sky-blue-color: #7ad7f0;
-  --ghost-white-color: #f5fcff;
-}
-
 * {
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
@@ -19,26 +14,42 @@ h2 {
   text-align: center;
 }
 
-/* Style the top navigation bar */
-.topnav {
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+.collapsible:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.collapseContent {
+  padding: 0 18px;
+  display: none;
   overflow: hidden;
-  background-color: #333;
-}
-
-/* Style the topnav links */
-.topnav a {
-  float: left;
-  display: block;
-  color: var(--ghost-white-color);
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* Change color on hover */
-.topnav a:hover {
-  background-color: var(--sky-blue-color);
-  /*color: black;*/
+  background-color: #f1f1f1;
 }
 
 /* Style the content */
@@ -50,7 +61,7 @@ h2 {
 .contentMobile {
   background-color: #ddd;
   padding: 10px;
-  height: 1250px;
+  height: 1450px;
 }
 
 /* Style the footer */
@@ -66,11 +77,11 @@ h2 {
   overflow: hidden;
 }
 
-.img1 {
+.diagram {
   position: relative;
 }
 
-.img1Mobile {
+.diagramMobile {
   position: relative;
   top: 420px;
   left: -330px;
@@ -79,37 +90,60 @@ h2 {
 
 #seat0 {
   position: absolute;
-  top: 177px;
-  left: 628px;
+  top: 160px;
+  left: 732px;
   max-height: 10%;
 }
 
-.img2Mobile {
-  display: block;
+#seat0Mobile {
   position: absolute;
-  top: 644px;
-  left: 110px;
+  top: calc(732px + 13px);
+  left: calc(160px - 31px);
   max-height: 10%;
 }
 
 #seat1 {
   position: absolute;
   top: 177px;
-  left: 588px;
+  left: 559px;
   max-height: 10%;
 }
+
+#seat1Mobile {
+  position: absolute;
+  top: calc(560px + 13px);
+  left: calc(142px - 31px);
+  max-height: 10%;
+}
+
 #seat2 {
   position: absolute;
-  top: 177px;
-  left: 548px;
+  top: 20px;
+  left: 433px;
   max-height: 10%;
 }
+
+#seat2Mobile {
+  position: absolute;
+  top: calc(433px + 13px);
+  left: calc(300px - 31px);
+  max-height: 10%;
+}
+
 #seat3 {
   position: absolute;
-  top: 177px;
-  left: 508px;
+  top: 141px;
+  left: 312px;
   max-height: 10%;
 }
+
+#seat3Mobile {
+  position: absolute;
+  top: calc(313px + 13px);
+  left: calc(178px - 31px);
+  max-height: 10%;
+}
+
 .hidden {
   visibility: hidden;
 }

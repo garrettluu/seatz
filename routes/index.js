@@ -4,12 +4,17 @@ module.exports = function (io) {
 
     /* GET home page. */
     router.get('/', function (req, res, next) {
-        res.render('index', {title: 'Bus Count'});
+        res.render('home', {title: 'Bus Count'});
+    });
+
+    /* GET live tracker */
+    router.get('/tracker', function (req, res) {
+        res.render('index', {title: 'Live Tracker'});
     });
 
     /* GET mobile page */
     router.get('/mobile', function(req, res) {
-        res.render('mobile', {title: 'Bus Count'});
+        res.render('mobile', {title: 'Live Tracker '});
     });
 
     io.on('connection', function (socket) {
