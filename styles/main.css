@@ -67,7 +67,7 @@ h2 {
 .img1Mobile {
   position: relative;
   top: 420px;
-  left: -300px;
+  left: -305px;
   transform: rotate(90deg);
 }
 
@@ -76,5 +76,13 @@ h2 {
   position: absolute;
   top: 177px;
   left: 628px;
+  max-height: 10%;
+}
+
+.img2Mobile {
+  display: block;
+  position: absolute;
+  top: 628px;
+  left: 177px;
   max-height: 10%;
 }
