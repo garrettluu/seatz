@@ -56,8 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     socket.on('update seat', function (msg) {
         // update the seat occupancy here
-        console.log(msg.seatOccupied);
-        seats[msg.seatNumber].occupied = msg.seatOccupied;
+        seats[msg.id].occupied = msg.occupied;
         updateSeatStatus();
     });
 
@@ -114,4 +113,5 @@ document.addEventListener('DOMContentLoaded', function () {
         // $.get('/data', function(response) {seats[response.num] = response.occupied});
         // updateSeatStatus();
     // });
+    updateSeatStatus();
 });

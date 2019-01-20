@@ -95,7 +95,7 @@ function availableSeats() {
 function prioritySeats() {
     var priorityOccupied = 0;
     for (var i = 0; i < seats.length; i++) {
-        if (!seats[i].occupied && seats[i].priority) {
+        if (seats[i].occupied && seats[i].priority) {
             priorityOccupied++;
         }
     }
