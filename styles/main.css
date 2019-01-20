@@ -77,13 +77,6 @@ h2 {
   transform: rotate(90deg);
 }
 
-#seat0 {
-  position: absolute;
-  top: 177px;
-  left: 628px;
-  max-height: 10%;
-}
-
 .img2Mobile {
   display: block;
   position: absolute;
@@ -92,24 +85,34 @@ h2 {
   max-height: 10%;
 }
 
+#seat0 {
+  position: absolute;
+  top: 160px;
+  left: 732px;
+  max-height: 10%;
+}
+
 #seat1 {
   position: absolute;
   top: 177px;
-  left: 588px;
+  left: 559px;
   max-height: 10%;
 }
+
 #seat2 {
   position: absolute;
-  top: 177px;
-  left: 548px;
+  top: 20px;
+  left: 433px;
   max-height: 10%;
 }
+
 #seat3 {
   position: absolute;
-  top: 177px;
-  left: 508px;
+  top: 141px;
+  left: 312px;
   max-height: 10%;
 }
+
 .hidden {
   visibility: hidden;
 }
