@@ -1,19 +1,24 @@
-<div class="topnav">
-  <a href="#">Link</a>
-  <a href="#">Link</a>
-  <a href="#">Link</a>
-</div>
-
 <div class="content">
-  <h2>Live Tracker</h2>
-  <div style="position:relative">
-    <img src="images/bus_floor_plan.jpg" alt="Bus Floor Plan" border="5">
-    <img src="images/red_x.png" alt="Occupied" width="20" height="20" style="position:relative; left:446px; top:-49px">
-  </div>
-</div>
+      <h2>Live Tracker</h2>
+      <div class="busMap">
+        <img class="img1" src="images/bus_floor_plan.jpg" alt="Bus Floor Plan" border="5%">
+        <img class="img2" id="seat0" src="images/red_x.png" alt="Occupied">
+        <img class="img3" id="seat1" src="images/red_x.png" alt="Occupied">
+        <img class="img4" id="seat2" src="images/red_x.png" alt="Occupied">
+        <img class="img5" id="seat3" src="images/red_x.png" alt="Occupied">
+      </div>
+      <div style="position:relative">
+        <h3>Bus 18A</h3>
+        <h3>Line 30</h3>
+        <h3>At stop: 5</h3>
+      </div>
+      <p>Route Number: A6</p>
+      <p id="availableSeats">Available Seats:</p>
+    </div>
 
-<div class="footer">
-</div>
+    <div class="footer">
+      <a href="/mobile">Switch to mobile version</a>
+    </div>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js'></script>
 <script src="javascripts/main.js"></script>
