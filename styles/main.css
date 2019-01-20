@@ -66,29 +66,28 @@ h2 {
   overflow: hidden;
 }
 
-.img1 {
+.diagram {
   position: relative;
 }
 
-.img1Mobile {
+.diagramMobile {
   position: relative;
   top: 420px;
   left: -330px;
   transform: rotate(90deg);
 }
 
-.img2Mobile {
-  display: block;
-  position: absolute;
-  top: 644px;
-  left: 110px;
-  max-height: 10%;
-}
-
 #seat0 {
   position: absolute;
   top: 160px;
   left: 732px;
+  max-height: 10%;
+}
+
+#seat0Mobile {
+  position: absolute;
+  top: calc(732px + 13px);
+  left: calc(160px - 31px);
   max-height: 10%;
 }
 
@@ -99,6 +98,13 @@ h2 {
   max-height: 10%;
 }
 
+#seat1Mobile {
+  position: absolute;
+  top: calc(560px + 13px);
+  left: calc(142px - 31px);
+  max-height: 10%;
+}
+
 #seat2 {
   position: absolute;
   top: 20px;
@@ -106,10 +112,24 @@ h2 {
   max-height: 10%;
 }
 
+#seat2Mobile {
+  position: absolute;
+  top: calc(433px + 13px);
+  left: calc(300px - 31px);
+  max-height: 10%;
+}
+
 #seat3 {
   position: absolute;
   top: 141px;
   left: 312px;
+  max-height: 10%;
+}
+
+#seat3Mobile {
+  position: absolute;
+  top: calc(159px + 13px);
+  left: calc(162px - 31px);
   max-height: 10%;
 }
 
