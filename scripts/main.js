@@ -14,7 +14,8 @@ function Seat(uiElement, index, occupied, priority) {
   this.priority = priority;
 }
 
-var totalSeats = 4;
+var totalSeats = 37;
+var totalPrioritySeats = 6;
 var seats = [];
 if(document.title === "index.html") {
   for (var i = 0; i < totalSeats; i++) {
@@ -70,23 +71,23 @@ function makeVisible(uiElement) {
 }
 
 function availableSeats() {
-    var numAvailable = 0;
+    var numOccupied = 0;
     for (var i = 0; i < seats.length; i++) {
-        if (!seats[i].occupied) {
-            numAvailable++;
+        if (seats[i].occupied) {
+            numOccupied++;
         }
     }
-    return numAvailable;
+    return totalSeats - numOccupied;
 }
 
 function prioritySeats() {
-    var priorityAvailable = 0;
+    var priorityOccupied = 0;
     for (var i = 0; i < seats.length; i++) {
         if (!seats[i].occupied && seats[i].priority) {
-            priorityAvailable++;
+            priorityOccupied++;
         }
     }
-    return priorityAvailable;
+    return totalPrioritySeats - priorityOccupied;
 }
 
 updateSeatStatus();
