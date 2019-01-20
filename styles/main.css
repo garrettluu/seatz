@@ -43,7 +43,12 @@ h2 {
 .content {
   background-color: #ddd;
   padding: 10px;
-  height: auto; /* Should be removed. Only for demonstration */
+}
+
+.contentMobile {
+  background-color: #ddd;
+  padding: 10px;
+  height: 1250px;
 }
 
 /* Style the footer */
@@ -56,8 +61,7 @@ h2 {
   position: relative;
   top: 0;
   left: 0;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  overflow: hidden;
 }
 
 .img1 {
@@ -67,7 +71,7 @@ h2 {
 .img1Mobile {
   position: relative;
   top: 420px;
-  left: -305px;
+  left: -320px;
   transform: rotate(90deg);
 }
 
@@ -82,7 +86,7 @@ h2 {
 .img2Mobile {
   display: block;
   position: absolute;
-  top: 628px;
-  left: 177px;
+  top: 644px;
+  left: 120px;
   max-height: 10%;
 }
