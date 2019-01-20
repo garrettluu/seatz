@@ -43,7 +43,7 @@ h2 {
 .content {
   background-color: #ddd;
   padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+  height: auto; /* Should be removed. Only for demonstration */
 }
 
 /* Style the footer */
@@ -60,7 +60,6 @@ h2 {
 }
 
 .img1 {
-  display: block;
   position: relative;
 }
 
