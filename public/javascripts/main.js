@@ -15,6 +15,16 @@ document.addEventListener('DOMContentLoaded', function () {
         this.occupied = occupied;
         this.priority = priority;
     }
+    // bus details
+    var busNumber = "18A";
+    var lineNumber = "30";
+    var busModel = "A";
+    var busDirection = "UTC";
+    var busStop = "5";
+    document.getElementById("busNumber").innerText = "Bus " + busNumber.toString();
+    document.getElementById("lineNumber").innerText = "Line " + lineNumber.toString();
+    document.getElementById("busDirection").innerText = "To: " + busDirection.toString();
+    document.getElementById("busStop").innerText = "At Stop: " + busStop.toString();
 
     var totalSeats = 4;
     var totalPrioritySeats = 1;
